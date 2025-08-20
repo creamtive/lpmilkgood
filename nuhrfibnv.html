@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MilkGoat - Susu Kambing Bubuk Berkualitas Premium</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2E8B57;
+            --secondary: #F8F9FA;
+            --accent: #FF6B35;
+            --dark: #2C3E50;
+            --light: #FFFFFF;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+            padding-top: 80px;
+        }
+        
+        .navbar {
+            background-color: var(--light);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 15px 0;
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 24px;
+        }
+        
+        .nav-link {
+            color: var(--dark);
+            font-weight: 500;
+            margin: 0 10px;
+            transition: all 0.3s;
+        }
+        
+        .nav-link:hover {
+            color: #267349;
+        }
+        
+        .btn-primary {
+            background-color: #267349;
+            border-color: #267349;
+            padding: 10px 25px;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .btn-primary:hover {
+            background-color: #267349;
+            transform: translateY(-2px);
+        }
+        
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1519681393784-d120267933ba') center/cover no-repeat;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+            border-radius: 0 0 30px 30px;
+            margin-bottom: 50px;
+        }
+        
+        .section-title {
+            position: relative;
+            margin-bottom: 40px;
+            font-weight: 700;
+            color: var(--dark);
+        }
+        
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: var(--primary);
+            margin: 15px auto;
+        }
+        
+        .benefit-card {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            height: 100%;
+            border: none;
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+        
+        .testimonial-card {
+            background: var(--secondary);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 20px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .product-card {
+            border: none;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+        
+        .price {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        
+        .cta-section {
+            background: linear-gradient(to right, var(--primary), #3DA76A);
+            color: white;
+            padding: 80px 0;
+            border-radius: 30px;
+            margin: 80px 0;
+        }
+        
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 60px 0 30px;
+        }
+        
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            margin-right: 10px;
+            transition: all 0.3s;
+        }
+        
+        .social-icon:hover {
+            background: var(--primary);
+            transform: translateY(-3px);
+        }
+        
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 40px;
+            right: 40px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 3px #999;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .whatsapp-float:hover {
+            background-color: #128C7E;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-goat"></i> MilkGoat
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Beranda</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">Tentang</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#benefits">Manfaat</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#products">Produk</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#testimonials">Testimoni</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Kontak</a>
+                    </li>
+                </ul>
+                <a href="https://wa.me/628123456789" class="btn btn-primary ms-3 d-none d-lg-block">
+                    <i class="fab fa-whatsapp"></i> Pesan Sekarang
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <h1 class="display-4 fw-bold mb-4">Susu Kambing Bubuk Premium MilkGoat</h1>
+                    <p class="lead mb-4">Rasakan manfaat luar biasa dari susu kambing bubuk berkualitas tinggi yang diproses secara modern untuk menjaga nutrisi dan kemurniannya.</p>
+                    <a href="#products" class="btn btn-primary btn-lg me-2">Lihat Produk</a>
+                    <a href="https://wa.me/628123456789" class="btn btn-outline-light btn-lg">Pesan via WhatsApp</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h2 class="section-title">Tentang MilkGoat</h2>
+                    <p class="lead">MilkGoat hadir dengan inovasi terbaru susu kambing bubuk yang mudah disajikan dan memiliki banyak manfaat untuk kesehatan seluruh keluarga.</p>
+                    <p>Diproduksi dengan teknologi modern yang menjaga kualitas dan nutrisi alami susu kambing, MilkGoat melalui proses pasteurisasi dan pengeringan spray dry yang canggih sehingga menghasilkan bubuk susu kambing yang mudah larut dan tidak berbau prengus.</p>
+                    <p>Susu kambing MilkGoat berasal dari peternakan kambing peranakan etawa yang dikelola secara profesional dan higienis, sehingga menghasilkan susu dengan kualitas terbaik.</p>
+                </div>
+                <div class="col-lg-6">
+                    <img src="https://images.unsplash.com/photo-1546776316-2eef556d1469" alt="Proses Produksi MilkGoat" class="img-fluid rounded shadow">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="benefits" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title text-center">Manfaat Susu Kambing MilkGoat</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="benefit-card card">
+                        <div class="card-body text-center p-4">
+                            <div class="mb-3">
+                                <i class="fas fa-heart fa-3x text-primary"></i>
+                            </div>
+                            <h4>Menjaga Kesehatan Jantung</h4>
+                            <p>Kandungan potassium yang tinggi membantu menstabilkan tekanan darah dan menjaga kesehatan jantung.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="benefit-card card">
+                        <div class="card-body text-center p-4">
+                            <div class="mb-3">
+                                <i class="fas fa-bone fa-3x text-primary"></i>
+                            </div>
+                            <h4>Menguatkan Tulang</h4>
+                            <p>Kaya akan kalsium dan fosfor yang penting untuk pertumbuhan dan kekuatan tulang serta gigi.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="benefit-card card">
+                        <div class="card-body text-center p-4">
+                            <div class="mb-3">
+                                <i class="fas fa-brain fa-3x text-primary"></i>
+                            </div>
+                            <h4>Meningkatkan Kecerdasan</h4>
+                            <p>Kandungan zinc dan magnesium membantu optimalkan perkembangan otak dan sistem saraf.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="benefit-card card">
+                        <div class="card-body text-center p-4">
+                            <div class="mb-3">
+                                <i class="fas fa-shield-alt fa-3x text-primary"></i>
+                            </div>
+                            <h4>Meningkatkan Imunitas</h4>
+                            <p>Kaya akan mineral selenium yang berperan penting dalam memperkuat sistem kekebalan tubuh.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="benefit-card card">
+                        <div class="card-body text-center p-4">
+                            <div class="mb-3">
+                                <i class="fas fa-allergies fa-3x text-primary"></i>
+                            </div>
+                            <h4>Mengurangi Alergi</h4>
+                            <p>Beta-casein A2 yang terkandung dalam susu kambing lebih mudah dicerna dan mengurangi risiko alergi.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="benefit-card card">
+                        <div class="card-body text-center p-4">
+                            <div class="mb-3">
+                                <i class="fas fa-tint fa-3x text-primary"></i>
+                            </div>
+                            <h4>Baik untuk Pencernaan</h4>
+                            <p>Memiliki prebiotik alami yang mendukung kesehatan usus dan sistem pencernaan.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="py-5">
+        <div class="container">
+            <h2 class="section-title text-center">Produk MilkGoat</h2>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="product-card card">
+                        <img src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b" class="card-img-top" alt="MilkGoat Original">
+                        <div class="card-body text-center">
+                            <h4>MilkGoat Original</h4>
+                            <p>Susu kambing bubuk dengan rasa original, tanpa tambahan gula.</p>
+                            <div class="price">Rp 95.000</div>
+                            <p class="text-muted">/ 200gr</p>
+                            <a href="https://wa.me/628123456789?text=Saya%20ingin%20memesan%20MilkGoat%20Original" class="btn btn-primary mt-3">Pesan Sekarang</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="product-card card">
+                        <img src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b" class="card-img-top" alt="MilkGoat Madu">
+                        <div class="card-body text-center">
+                            <h4>MilkGoat Madu</h4>
+                            <p>Susu kambing bubuk dengan tambahan madu asli untuk rasa yang lebih nikmat.</p>
+                            <div class="price">Rp 105.000</div>
+                            <p class="text-muted">/ 200gr</p>
+                            <a href="https://wa.me/628123456789?text=Saya%20ingin%20memesan%20MilkGoat%20Madu" class="btn btn-primary mt-3">Pesan Sekarang</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="product-card card">
+                        <img src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b" class="card-img-top" alt="MilkGoat Coklat">
+                        <div class="card-body text-center">
+                            <h4>MilkGoat Coklat</h4>
+                            <p>Perpaduan sempurna antara susu kambing bubuk dan coklat berkualitas.</p>
+                            <div class="price">Rp 110.000</div>
+                            <p class="text-muted">/ 200gr</p>
+                            <a href="https://wa.me/628123456789?text=Saya%20ingin%20memesan%20MilkGoat%20Coklat" class="btn btn-primary mt-3">Pesan Sekarang</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title text-center">Testimoni Pelanggan</h2>
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <div class="testimonial-card">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="me-3">
+                                <i class="fas fa-user-circle fa-2x text-primary"></i>
+                            </div>
+                            <div>
+                                <h5 class="mb-0">Budi Santoso</h5>
+                                <div class="text-warning">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="mb-0">"Sejak rutin minum MilkGoat, stamina saya semakin baik dan tidak mudah capek. Pencernaan juga jadi lebih lancar."</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="testimonial-card">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="me-3">
+                                <i class="fas fa-user-circle fa-2x text-primary"></i>
+                            </div>
+                            <div>
+                                <h5 class="mb-0">Dewi Lestari</h5>
+                                <div class="text-warning">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="mb-0">"Anak saya yang alergi susu sapi sekarang bisa minum susu tanpa masalah berkat MilkGoat. Rasanya juga enak!"</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="testimonial-card">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="me-3">
+                                <i class="fas fa-user-circle fa-2x text-primary"></i>
+                            </div>
+                            <div>
+                                <h5 class="mb-0">Rina Wijaya</h5>
+                                <div class="text-warning">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="mb-0">"Tulang saya yang sering nyeri sekarang sudah jauh berkurang setelah rutin konsumsi MilkGoat. Terima kasih!"</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container text-center">
+            <h2 class="mb-4">Tunggu Apa Lagi? Dapatkan Manfaatnya Sekarang!</h2>
+            <p class="lead mb-5">Pesan MilkGoat hari ini dan rasakan perubahan kesehatan yang signifikan untuk Anda dan keluarga.</p>
+            <a href="https://wa.me/628123456789" class="btn btn-light btn-lg">Pesan via WhatsApp <i class="fab fa-whatsapp ms-2"></i></a>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5">
+        <div class="container">
+            <h2 class="section-title text-center">Hubungi Kami</h2>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="card border-0 shadow">
+                        <div class="card-body p-5">
+                            <div class="row">
+                                <div class="col-md-6 mb-4">
+                                    <h4>Informasi Kontak</h4>
+                                    <p><i class="fas fa-map-marker-alt me-2 text-primary"></i> Jl. Raya Kambing Etawa No. 123, Jawa Tengah</p>
+                                    <p><i class="fas fa-phone me-2 text-primary"></i> +62 812-3456-7890</p>
+                                    <p><i class="fas fa-envelope me-2 text-primary"></i> info@milkgoat.com</p>
+                                </div>
+                                <div class="col-md-6">
+                                    <h4>Jam Operasional</h4>
+                                    <p>Senin - Jumat: 08.00 - 17.00 WIB</p>
+                                    <p>Sabtu: 08.00 - 15.00 WIB</p>
+                                    <p>Minggu: Tutup</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h4>MilkGoat</h4>
+                    <p>Susu kambing bubuk premium dengan kualitas terbaik untuk kesehatan keluarga Indonesia.</p>
+                    <div class="mt-3">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#home" class="text-white text-decoration-none">Beranda</a></li>
+                        <li><a href="#about" class="text-white text-decoration-none">Tentang</a></li>
+                        <li><a href="#benefits" class="text-white text-decoration-none">Manfaat</a></li>
+                        <li><a href="#products" class="text-white text-decoration-none">Produk</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-4">
+                    <h5>Produk</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white text-decoration-none">MilkGoat Original</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">MilkGoat Madu</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">MilkGoat Coklat</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Paket Hemat</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-4 mb-4">
+                    <h5>Metode Pembayaran</h5>
+                    <div>
+                        <img src="https://via.placeholder.com/40" alt="Bank Transfer" class="me-2 mb-2">
+                        <img src="https://via.placeholder.com/40" alt="QRIS" class="me-2 mb-2">
+                        <img src="https://via.placeholder.com/40" alt="Gopay" class="me-2 mb-2">
+                        <img src="https://via.placeholder.com/40" alt="OVO" class="me-2 mb-2">
+                        <img src="https://via.placeholder.com/40" alt="Dana" class="me-2 mb-2">
+                    </div>
+                </div>
+            </div>
+            <hr class="bg-light">
+            <div class="text-center py-3">
+                <p class="mb-0">&copy; 2023 MilkGoat. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/628123456789" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
