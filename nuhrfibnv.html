@@ -21,45 +21,218 @@
             padding-top: 80px;
         }
         
-        .navbar {
-            background-color: var(--light);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            padding: 15px 0;
+        .logo-img {
+            height: 60px;
+            width: auto;
+            scale: 3;
+            margin-bottom: -10px;
+            margin-left: 35px;
+            transition: all 0.3s ease;
         }
         
-        .navbar-brand {
+        .logo-img:hover {
+            transform: scale(1.1);
+        }
+
+        .custom-navbar {
+            background: linear-gradient(135deg, #0096ec 70%, #0067a3 100%);
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+            padding: 10px 15px;
+            margin-bottom: 20px;
+            width: auto;
+            display: inline-block;
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        
+        .custom-navbar:hover {
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+            transform: translateY(-2px);
+        }
+        
+        .navbar-content {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+        }
+        
+        .nav-logo {
+            margin-right: 15px;
             font-weight: 700;
-            color: var(--primary);
-            font-size: 24px;
+            font-size: 1.5rem;
+            color: #ffffff
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        
+        .nav-logo i {
+            margin-right: 8px;
+            font-size: 1.8rem;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .nav-item {
+            margin-left: 20px;
+            position: relative;
         }
         
         .nav-link {
-            color: var(--dark);
+            color: #ffffff;
+            text-decoration: none;
             font-weight: 500;
-            margin: 0 10px;
-            transition: all 0.3s;
+            padding: 8px 12px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+        }
+        
+        .nav-link i {
+            margin-right: 6px;
+            font-size: 1.1rem;
         }
         
         .nav-link:hover {
-            color: #267349;
+            background-color: rgba(155, 17, 17, 0.15);
+            color: #ffffff;
         }
         
+        .nav-link.active {
+            background-color: #0067a3;    
+            color: #ffffff;
+        }
+        
+        /* Mobile menu button */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: rgb(255, 255, 255);
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+        
+        .mobile-menu-btn:hover {
+            background-color: rgba(255, 255, 255, 0.15);
+        }
+        
+        /* Mobile styles */
+        @media (max-width: 992px) {
+            body {
+                padding-top: 70px;
+            }
+            
+            .custom-navbar {
+                width: auto;
+                right: 7px;
+                left: auto;
+                padding: 5px 7.5px;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                right: 0;
+                background: linear-gradient(135deg, #0067a3 0%, #0096ec 100%);
+                border-radius: 15px;
+                padding: 15px;
+                margin-top: 10px;
+                box-shadow: 0 5px 20px rgba(32, 32, 32, 0.2);
+                min-width: 200px;
+                flex-direction: column;
+                z-index: 1001;
+            }
+            
+            .nav-menu.active {
+                display: flex;
+                animation: fadeIn 0.3s ease;
+            }
+            
+            .nav-item {
+                margin: 8px 0;
+                margin-left: 0;
+            }
+            
+            .logo-img {
+                height: 50px;
+                scale: 1.5;
+                margin-bottom: -30px;
+                margin-left: 10px;
+            }
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .btn-light {
+            background-color: #ffffff;
+            border-color: #ffffff;
+            padding: 10px 25px;
+            border-radius: 30px;
+            margin-bottom: 15px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .btn-light:hover {
+            background-color: #3da069;
+            transform: translateY(-2px);
+            color: #FFF;
+        }
+
         .btn-primary {
             background-color: #267349;
             border-color: #267349;
             padding: 10px 25px;
             border-radius: 30px;
+            margin-bottom: 15px;
             font-weight: 600;
             transition: all 0.3s;
         }
         
         .btn-primary:hover {
-            background-color: #267349;
+            background-color: #3da069;
             transform: translateY(-2px);
         }
         
+        .btn-primarysho {
+            color: #ffffff;
+            background-color: #EE4D2D;
+            border-color: #EE4D2D;
+            padding: 10px 25px;
+            border-radius: 30px;
+            margin-bottom: 15px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .btn-primarysho:hover {
+            background-color: #fc5d3d;
+            transform: translateY(-2px);
+        }
+
         .hero {
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1519681393784-d120267933ba') center/cover no-repeat;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1627279316275-c5452c5d62d9?q=80&w=1929&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') center/cover no-repeat;
             color: white;
             padding: 100px 0;
             text-align: center;
@@ -76,7 +249,6 @@
         
         .section-title:after {
             content: '';
-            display: block;
             width: 60px;
             height: 4px;
             background: var(--primary);
@@ -144,7 +316,7 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            background: rgba(255,255,255,0.1);
+            background: #ececec;
             border-radius: 50%;
             margin-right: 10px;
             transition: all 0.3s;
@@ -157,15 +329,15 @@
         
         .whatsapp-float {
             position: fixed;
-            width: 60px;
-            height: 60px;
-            bottom: 40px;
-            right: 40px;
-            background-color: #25d366;
+            width: 40px;
+            height: 40px;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25D366;
             color: #FFF;
-            border-radius: 50px;
+            border-radius: 40px;
             text-align: center;
-            font-size: 30px;
+            font-size: 20px;
             box-shadow: 2px 2px 3px #999;
             z-index: 100;
             display: flex;
@@ -179,52 +351,63 @@
     </style>
 </head>
 <body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="#">
-                <i class="fas fa-goat"></i> MilkGoat
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+        <a class="logo-img">
+            <img src="https://github.com/creamtive/lpmilkgood/blob/main/logo%20milkgoat.png?raw=true" alt="MilkGoat Logo" class="logo-img">
+        </a>
+    <nav class="custom-navbar">
+        <div class="navbar-content">
+            <button class="mobile-menu-btn" id="menuToggle">
+                <i class="fas fa-bars"></i>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#home">Beranda</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#about">Tentang</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#benefits">Manfaat</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#products">Produk</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#testimonials">Testimoni</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contact">Kontak</a>
-                    </li>
-                </ul>
-                <a href="https://wa.me/628123456789" class="btn btn-primary ms-3 d-none d-lg-block">
-                    <i class="fab fa-whatsapp"></i> Pesan Sekarang
-                </a>
-            </div>
+                
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link active">
+                        <i class="fas fa-home"></i>
+                        <span>Beranda</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#products" class="nav-link">
+                        <i class="fas fa-shopping-basket"></i>
+                        <span>Produk</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link">
+                        <i class="fas fa-info-circle"></i>
+                        <span>Tentang</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#testimonials" class="nav-link">
+                        <i class="fas fa-star"></i>
+                        <span>Testimoni</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">
+                        <i class="fas fa-envelope"></i>
+                        <span>Kontak</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#products" class="btn btn-light btn-lg" class="nav-link">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span>Beli</span>
+                    </a>
+                </li>
+            </ul>
         </div>
     </nav>
-
-    <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 mx-auto">
-                    <h1 class="display-4 fw-bold mb-4">Susu Kambing Bubuk Premium MilkGoat</h1>
+                    <h1 class="display-4 fw-bold mb-4">Susu Kambing Bubuk Premium Milkgoat</h1>
                     <p class="lead mb-4">Rasakan manfaat luar biasa dari susu kambing bubuk berkualitas tinggi yang diproses secara modern untuk menjaga nutrisi dan kemurniannya.</p>
-                    <a href="#products" class="btn btn-primary btn-lg me-2">Lihat Produk</a>
-                    <a href="https://wa.me/628123456789" class="btn btn-outline-light btn-lg">Pesan via WhatsApp</a>
+                    <a href="#products" class="btn btn-light btn-lg me-2">Lihat Produk</a>
+                    <a href="https://wa.me/6285946443438" class="btn btn-primary btn-lg me-2">Pesan via WhatsApp</a>
                 </div>
             </div>
         </div>
@@ -235,13 +418,13 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6">
-                    <h2 class="section-title">Tentang MilkGoat</h2>
-                    <p class="lead">MilkGoat hadir dengan inovasi terbaru susu kambing bubuk yang mudah disajikan dan memiliki banyak manfaat untuk kesehatan seluruh keluarga.</p>
-                    <p>Diproduksi dengan teknologi modern yang menjaga kualitas dan nutrisi alami susu kambing, MilkGoat melalui proses pasteurisasi dan pengeringan spray dry yang canggih sehingga menghasilkan bubuk susu kambing yang mudah larut dan tidak berbau prengus.</p>
-                    <p>Susu kambing MilkGoat berasal dari peternakan kambing peranakan etawa yang dikelola secara profesional dan higienis, sehingga menghasilkan susu dengan kualitas terbaik.</p>
+                    <h2 class="section-title">Tentang Milkgoat</h2>
+                    <p class="lead">Milkgoat hadir dengan inovasi terbaru susu kambing bubuk yang mudah disajikan dan memiliki banyak manfaat untuk kesehatan seluruh keluarga.</p>
+                    <p class="lead">Diproduksi dengan teknologi modern yang menjaga kualitas dan nutrisi alami susu kambing,  sehingga menghasilkan bubuk susu kambing yang mudah larut dan tidak berbau prengus.</p>
+                    <p class="lead">Susu kambing Milkgoat berasal dari peternakan kambing peranakan etawa yang dikelola secara profesional dan higienis, sehingga menghasilkan susu dengan kualitas terbaik.</p>
                 </div>
                 <div class="col-lg-6">
-                    <img src="https://images.unsplash.com/photo-1546776316-2eef556d1469" alt="Proses Produksi MilkGoat" class="img-fluid rounded shadow">
+                    <img src="https://github.com/creamtive/lpmilkgood/blob/main/58_20250808_083825_0014.png?raw=true" alt="Proses Produksi MilkGoat" class="img-fluid shadowrounded ">
                 </div>
             </div>
         </div>
@@ -250,7 +433,7 @@
     <!-- Benefits Section -->
     <section id="benefits" class="py-5 bg-light">
         <div class="container">
-            <h2 class="section-title text-center">Manfaat Susu Kambing MilkGoat</h2>
+            <h2 class="section-title text-center">Manfaat Susu Kambing Milkgoat</h2>                                                            
             <div class="row">
                 <div class="col-md-4 mb-4">
                     <div class="benefit-card card">
@@ -292,7 +475,7 @@
                                 <i class="fas fa-shield-alt fa-3x text-primary"></i>
                             </div>
                             <h4>Meningkatkan Imunitas</h4>
-                            <p>Kaya akan mineral selenium yang berperan penting dalam memperkuat sistem kekebalan tubuh.</p>
+                            <p>Kaya akan mineral selenium yang berperan penting dalam mendukung kerja sistem kekebalan tubuh agar berfungsi dengan optimal.</p>
                         </div>
                     </div>
                 </div>
@@ -302,7 +485,7 @@
                             <div class="mb-3">
                                 <i class="fas fa-allergies fa-3x text-primary"></i>
                             </div>
-                            <h4>Mengurangi Alergi</h4>
+                            <h4>Lebih nyaman untuk pencernaan  </h4>
                             <p>Beta-casein A2 yang terkandung dalam susu kambing lebih mudah dicerna dan mengurangi risiko alergi.</p>
                         </div>
                     </div>
@@ -311,10 +494,10 @@
                     <div class="benefit-card card">
                         <div class="card-body text-center p-4">
                             <div class="mb-3">
-                                <i class="fas fa-tint fa-3x text-primary"></i>
+                                <i class="fas fa-dumbbell fa-3x text-primary"></i>
                             </div>
-                            <h4>Baik untuk Pencernaan</h4>
-                            <p>Memiliki prebiotik alami yang mendukung kesehatan usus dan sistem pencernaan.</p>
+                            <h4>Membantu Menjaga Stamina dan Kebugaran Tubuh</h4>
+                            <p>Kandungan Zinc, Vitamin B Kompleks, dan zat besi berperan penting dalam proses metabolisme energi, produksi sel darah merah, dan mengurangi rasa lelah.</p>
                         </div>
                     </div>
                 </div>
@@ -325,41 +508,44 @@
     <!-- Products Section -->
     <section id="products" class="py-5">
         <div class="container">
-            <h2 class="section-title text-center">Produk MilkGoat</h2>
+            <h2 class="section-title text-center">Produk Milkgoat</h2>
             <div class="row">
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="product-card card">
-                        <img src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b" class="card-img-top" alt="MilkGoat Original">
+                        <img src="https://github.com/creamtive/lpmilkgood/blob/main/WhatsApp%20Image%202025-08-23%20at%2010.46.34.jpeg?raw=true" class="card-img-top" alt="MilkGoat Original">
                         <div class="card-body text-center">
-                            <h4>MilkGoat Original</h4>
-                            <p>Susu kambing bubuk dengan rasa original, tanpa tambahan gula.</p>
-                            <div class="price">Rp 95.000</div>
-                            <p class="text-muted">/ 200gr</p>
-                            <a href="https://wa.me/628123456789?text=Saya%20ingin%20memesan%20MilkGoat%20Original" class="btn btn-primary mt-3">Pesan Sekarang</a>
+                            <h4>Milkgoat Original</h4>
+                            <p>Susu kambing bubuk milkgoat 1 pcs.</p>
+                            <div class="price">Rp 75.000</div>
+                            <p class="text-muted">500gr</p>
+                            <a href="https://wa.me/6285946443438?text=Saya%20ingin%20memesan%20Milkgoat%20Original" class="btn btn-primary mt-3"><i class="fab fa-whatsapp ms-2"></i> Pesan Sekarang</a>
+                            <a href="https://id.shp.ee/PUiRuuw" class="btn btn-primarysho mt-3">Shopee</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="product-card card">
-                        <img src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b" class="card-img-top" alt="MilkGoat Madu">
+                        <img src="https://github.com/creamtive/lpmilkgood/blob/main/WhatsApp%20Image%202025-07-09%20at%2015.28.09.jpeg?raw=true" class="card-img-top" alt="MilkGoat Madu">
                         <div class="card-body text-center">
-                            <h4>MilkGoat Madu</h4>
-                            <p>Susu kambing bubuk dengan tambahan madu asli untuk rasa yang lebih nikmat.</p>
-                            <div class="price">Rp 105.000</div>
-                            <p class="text-muted">/ 200gr</p>
-                            <a href="https://wa.me/628123456789?text=Saya%20ingin%20memesan%20MilkGoat%20Madu" class="btn btn-primary mt-3">Pesan Sekarang</a>
+                            <h4>Milkgoat Original Paket 2 pcs</h4>
+                            <p>Susu kambing bubuk milkgoat paket 3 pcs.</p>
+                            <div class="price">Rp 150.000</div>
+                            <p class="text-muted">@500gr</p>
+                            <a href="https://wa.me/6285946443438?text=Saya%20ingin%20memesan%20Milkgoat%20paket%202%pcs" class="btn btn-primary mt-3"><i class="fab fa-whatsapp ms-2"></i> Pesan Sekarang</a>
+                            <a href="https://id.shp.ee/zkL9PqQ" class="btn btn-primarysho mt-3">Shopee</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="product-card card">
-                        <img src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b" class="card-img-top" alt="MilkGoat Coklat">
+                        <img src="https://github.com/creamtive/lpmilkgood/blob/main/WhatsApp%20Image%202025-07-09%20at%2015.27.55.jpeg?raw=true" class="card-img-top" alt="MilkGoat Coklat">
                         <div class="card-body text-center">
-                            <h4>MilkGoat Coklat</h4>
-                            <p>Perpaduan sempurna antara susu kambing bubuk dan coklat berkualitas.</p>
-                            <div class="price">Rp 110.000</div>
-                            <p class="text-muted">/ 200gr</p>
-                            <a href="https://wa.me/628123456789?text=Saya%20ingin%20memesan%20MilkGoat%20Coklat" class="btn btn-primary mt-3">Pesan Sekarang</a>
+                            <h4>Milkgoat Original Paket 3 pcs</h4>
+                            <p>Susu kambing bubuk milkgoat paket 3 pcs.</p>
+                            <div class="price">Rp 225.000</div>
+                            <p class="text-muted">@500gr</p>
+                            <a href="https://wa.me/6285946443438?text=Saya%20ingin%20memesan%20Milkgoat%20paket%203%20pcs" class="btn btn-primary mt-3"><i class="fab fa-whatsapp ms-2"></i> Pesan Sekarang</a>
+                            <a href="https://id.shp.ee/NmczvEu" class="btn btn-primarysho mt-3">Shopee</a>
                         </div>
                     </div>
                 </div>
@@ -379,7 +565,7 @@
                                 <i class="fas fa-user-circle fa-2x text-primary"></i>
                             </div>
                             <div>
-                                <h5 class="mb-0">Budi Santoso</h5>
+                                <h5 class="mb-0">Sartono, Tronggalan</h5>
                                 <div class="text-warning">
                                     <i class="fas fa-star"></i>
                                     <i class="fas fa-star"></i>
@@ -389,7 +575,7 @@
                                 </div>
                             </div>
                         </div>
-                        <p class="mb-0">"Sejak rutin minum MilkGoat, stamina saya semakin baik dan tidak mudah capek. Pencernaan juga jadi lebih lancar."</p>
+                        <p class="mb-0">"Minum ini jadi tubuh enteng n berkurang kunang2 e. Dan tidak menimbulkan alergi"</p>
                     </div>
                 </div>
                 <div class="col-lg-4 mb-4">
@@ -399,7 +585,7 @@
                                 <i class="fas fa-user-circle fa-2x text-primary"></i>
                             </div>
                             <div>
-                                <h5 class="mb-0">Dewi Lestari</h5>
+                                <h5 class="mb-0">T*****s</h5>
                                 <div class="text-warning">
                                     <i class="fas fa-star"></i>
                                     <i class="fas fa-star"></i>
@@ -409,7 +595,7 @@
                                 </div>
                             </div>
                         </div>
-                        <p class="mb-0">"Anak saya yang alergi susu sapi sekarang bisa minum susu tanpa masalah berkat MilkGoat. Rasanya juga enak!"</p>
+                        <p class="mb-0">"Susu milkgoat ini enak., Kandungan susu yg lebih banyak.. tidak prengus , tidak bikin eneg..."</p>
                     </div>
                 </div>
                 <div class="col-lg-4 mb-4">
@@ -419,7 +605,7 @@
                                 <i class="fas fa-user-circle fa-2x text-primary"></i>
                             </div>
                             <div>
-                                <h5 class="mb-0">Rina Wijaya</h5>
+                                <h5 class="mb-0">Asri, Magelang</h5>
                                 <div class="text-warning">
                                     <i class="fas fa-star"></i>
                                     <i class="fas fa-star"></i>
@@ -429,7 +615,7 @@
                                 </div>
                             </div>
                         </div>
-                        <p class="mb-0">"Tulang saya yang sering nyeri sekarang sudah jauh berkurang setelah rutin konsumsi MilkGoat. Terima kasih!"</p>
+                        <p class="mb-0">"Cocok mbak.. cucuku kok jg seneng"</p>
                     </div>
                 </div>
             </div>
@@ -441,7 +627,7 @@
         <div class="container text-center">
             <h2 class="mb-4">Tunggu Apa Lagi? Dapatkan Manfaatnya Sekarang!</h2>
             <p class="lead mb-5">Pesan MilkGoat hari ini dan rasakan perubahan kesehatan yang signifikan untuk Anda dan keluarga.</p>
-            <a href="https://wa.me/628123456789" class="btn btn-light btn-lg">Pesan via WhatsApp <i class="fab fa-whatsapp ms-2"></i></a>
+            <a href="https://wa.me/6285946443438" class="btn btn-light btn-lg">Pesan via WhatsApp <i class="fab fa-whatsapp ms-2"></i></a>
         </div>
     </section>
 
@@ -456,14 +642,13 @@
                             <div class="row">
                                 <div class="col-md-6 mb-4">
                                     <h4>Informasi Kontak</h4>
-                                    <p><i class="fas fa-map-marker-alt me-2 text-primary"></i> Jl. Raya Kambing Etawa No. 123, Jawa Tengah</p>
-                                    <p><i class="fas fa-phone me-2 text-primary"></i> +62 812-3456-7890</p>
-                                    <p><i class="fas fa-envelope me-2 text-primary"></i> info@milkgoat.com</p>
+                                    <p><i class="fas fa-map-marker-alt me-2 text-primary"></i> Citromenggalan, Ngawen, Kec. Muntilan, Kabupaten Magelang, Jawa Tengah 56415</p>
+                                    <p><i class="fas fa-phone me-2 text-primary"></i> +62 850-4644-3438</p>
+                                    <p><i class="fas fa-envelope me-2 text-primary"></i> nexora801@gmail.com</p>
                                 </div>
                                 <div class="col-md-6">
                                     <h4>Jam Operasional</h4>
-                                    <p>Senin - Jumat: 08.00 - 17.00 WIB</p>
-                                    <p>Sabtu: 08.00 - 15.00 WIB</p>
+                                    <p>Senin - Sabtu: 08.00 - 16.30 WIB</p>
                                     <p>Minggu: Tutup</p>
                                 </div>
                             </div>
@@ -479,13 +664,13 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 mb-4">
-                    <h4>MilkGoat</h4>
+                    <h4>Milkgoat</h4>
                     <p>Susu kambing bubuk premium dengan kualitas terbaik untuk kesehatan keluarga Indonesia.</p>
                     <div class="mt-3">
-                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                        <a href="https://wa.me/6285946443438" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://www.instagram.com/milkgoat_official/" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="https://t.me/milkgoatofficial   " class="social-icon"><i class="fab fa-telegram"></i></a>
+                        <a href="https://www.tiktok.com/@creamtive?_t=ZS-8z6jJ6aKfc9&_r=1" class="social-icon"><i class="fab fa-tiktok"></i></a>
                     </div>
                 </div>
                 <div class="col-lg-2 col-md-4 mb-4">
@@ -495,15 +680,6 @@
                         <li><a href="#about" class="text-white text-decoration-none">Tentang</a></li>
                         <li><a href="#benefits" class="text-white text-decoration-none">Manfaat</a></li>
                         <li><a href="#products" class="text-white text-decoration-none">Produk</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-2 col-md-4 mb-4">
-                    <h5>Produk</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="#" class="text-white text-decoration-none">MilkGoat Original</a></li>
-                        <li><a href="#" class="text-white text-decoration-none">MilkGoat Madu</a></li>
-                        <li><a href="#" class="text-white text-decoration-none">MilkGoat Coklat</a></li>
-                        <li><a href="#" class="text-white text-decoration-none">Paket Hemat</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-4 col-md-4 mb-4">
@@ -519,16 +695,54 @@
             </div>
             <hr class="bg-light">
             <div class="text-center py-3">
-                <p class="mb-0">&copy; 2023 MilkGoat. All rights reserved.</p>
+                <p class="mb-0">&copy; 2025 Milkgoat. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
     <!-- WhatsApp Float Button -->
-    <a href="https://wa.me/628123456789" class="whatsapp-float" target="_blank">
+    <a href="https://wa.me/6285946443438" class="whatsapp-float" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Toggle mobile menu
+        document.getElementById('menuToggle').addEventListener('click', function(e) {
+            e.stopPropagation();
+            const navMenu = document.getElementById('navMenu');
+            navMenu.classList.toggle('active');
+            
+            // Ganti icon menu dan close
+            const icon = this.querySelector('i');
+            if (navMenu.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const navMenu = document.getElementById('navMenu');
+            const menuToggle = document.getElementById('menuToggle');
+            
+            if (!navMenu.contains(event.target) && !menuToggle.contains(event.target) && navMenu.classList.contains('active')) {
+                navMenu.classList.remove('active');
+                
+                // Reset icon to bars
+                const icon = menuToggle.querySelector('i');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+        
+        // Prevent menu from closing when clicking inside it
+        document.getElementById('navMenu').addEventListener('click', function(e) {
+            e.stopPropagation();
+        });
+    </script>
 </body>
 </html>
